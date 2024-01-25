@@ -1,0 +1,11 @@
+---
+import "./ButtonLink.sass"
+type Props = {
+  className?: string,
+}
+const {className} = Astro.props
+---
+
+<div class={`fill-white ${className || ""}`} role="link">
+  <slot/>
+</div>
