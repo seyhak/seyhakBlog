@@ -2,22 +2,24 @@
   gap: 6px
   > span
     height: 3px
+    @apply bg-blue-950 dark:bg-blue-100
   &:hover
     > span
-      background-color: rgb(67 56 202)
+      @apply bg-indigo-700 dark:bg-white transition ease-in-out duration-300 delay-100
+      @apply shadow shadow-indigo-700
 
 #menuToggle
   &:checked
     background: blue
     &~nav
       left: -2rem
-      @media screen and (max-width: 640px)
+      @media screen and (max-width: screen(sm))
         display: flex
     &~label
       > span
         opacity: 1
         transform: rotate(45deg) translate(-7px, -6px)
-        background: #232323
+        @apply bg-blue-950 dark:bg-blue-100
         &:nth-last-child(3)
           opacity: 0
           transform: rotate(0deg) scale(0.2, 0.2)

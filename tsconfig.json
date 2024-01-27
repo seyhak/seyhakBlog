@@ -11,5 +11,5 @@
       "@styles/*": ["src/styles/*"],
     },
   },
-  "exclude": ["MY"]
+  "exclude": ["MY"],
 }

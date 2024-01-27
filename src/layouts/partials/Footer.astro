@@ -1,6 +1,6 @@
 ---
 import Social from "@components/Social.astro"
-import TypographyLink from "@components/TypographyLink.astro"
+import TypographyLink from "@components/TypographyLink/TypographyLink.astro"
 
 import {SOCIAL_MEDIA_SERVICES} from 'src/types/social-media'
 
@@ -20,7 +20,7 @@ const SOCIALS = [
 
 ---
 
-<footer class="px-6 py-3 mt-2 dark:bg-gray-950 bg-blue-950 text-blue-100 max-sm:block" >
+<footer class="px-6 py-3 mt-8 dark:bg-gray-950 bg-blue-950 text-blue-100 max-sm:block" >
   <div class="flex justify-around items-center max-w-prose mx-auto max-sm:flex-col max-sm:gap-2">
     <TypographyLink href="about" light>
       About

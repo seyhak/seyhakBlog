@@ -1,14 +1,50 @@
 ---
-import { Image } from 'astro:assets';
-import BaseLayout from 'src/layouts/BaseLayout.astro';
-import AnnaGanowskaHiImg from "@assets/images/AnnaGanowskaHi.webp"
+import { Image } from "astro:assets";
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import AnnaGanowskaHiImg from "@assets/images/AnnaGanowskaHi.webp";
+import IndexSectionWithImg from "@components/IndexSectionWithImg.astro";
+import Img1 from "@assets/images/img1.jpeg";
 ---
 
 <BaseLayout>
-  <section class="bg-blue-500 min-h-10">
+  <section class="min-h-10">
     <!-- <h2>Hej tu Anna Ganowska - Weterynarz w pracy!</h2> -->
   </section>
-  <section class="flex justify-center">
-    <Image src={AnnaGanowskaHiImg} alt="To ja Anna Ganowska, weterynarz w pracy!"/>
+  <section class="flex justify-center revealed">
+    <Image
+      src={AnnaGanowskaHiImg}
+      alt="To ja Anna Ganowska, weterynarz w pracy!"
+    />
+  </section>
+  <section class="flex flex-col justify-center gap-4">
+    <h1 class="revealed-bottom">I am specialist in</h1>
+    <IndexSectionWithImg
+      className="revealed fade-left flex-row-reverse"
+      title="Reptiles"
+      imgSrc={Img1}
+      imgAlt="twoja stara"
+    />
+    <IndexSectionWithImg
+      className="revealed fade-right"
+      title="Small mammals"
+      imgSrc={Img1}
+      imgAlt="twoja stara"
+    />
+    <IndexSectionWithImg
+      className="revealed fade-left flex-row-reverse"
+      title="Cats"
+      imgSrc={Img1}
+      imgAlt="twoja stara"
+    />
+    <IndexSectionWithImg
+      className="revealed fade-right"
+      title="Dogs"
+      imgSrc={Img1}
+      imgAlt="twoja stara"
+    />
+  </section>
+  <section class="revealed fade-bottom">
+    <h2>You can meet me here</h2>
+    GOogle maps shit?
   </section>
 </BaseLayout>

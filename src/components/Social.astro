@@ -3,7 +3,7 @@ import {SOCIAL_MEDIA_SERVICES} from 'src/types/social-media'
 
 import InstagramIcon from "@assets/svgs/instagram.svg?raw"
 import FacebookIcon from "@assets/svgs/facebook.svg?raw"
-import ButtonLink from '@components/ButtonLink.astro';
+import ButtonLink from '@components/ButtonLink/ButtonLink.astro';
 
 export type Props = {
   name: string;
@@ -26,7 +26,7 @@ const serviceIcon = ICONS[service]
     rel="noopener noreferrer nofollow"
     class="flex justify-center items-center gap-1"
   >
-    <ButtonLink className="svg-wrapper">
+    <ButtonLink>
       <Fragment set:html={serviceIcon}/>
     </ButtonLink>
   </a>
