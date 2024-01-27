@@ -1,9 +1,14 @@
-<body>
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
+---
+import { getCollection } from "astro:content";
+import BlogPostShort from '@components/BlogPostShort.astro';
+import BaseLayout from '../layouts/BaseLayout.astro'
 
-  <h1>My Astro Site</h1>
-  <h1>My Astro Learning Blog</h1>
+const allPosts = await getCollection("posts");
+const pageTitle = "My Astro Learning Blog";
+---
+<BaseLayout pageTitle={pageTitle}>
   <p>This is where I will post about my journey learning Astro.</p>
-</body>
+  <ul>
+    {allPosts.map((post) => <BlogPostShort post={post}/>)}
+  </ul>
+</BaseLayout>

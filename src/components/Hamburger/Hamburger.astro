@@ -1,0 +1,17 @@
+---
+import TypographyLink from "@components/TypographyLink.astro"
+import "./Hamburger.sass"
+---
+<div class="relative md:absolute">
+  <input id="menuToggle" type="checkbox" class="hidden" />
+  <label for="menuToggle" class="hamburger md:hidden max-md:grid grid-cols-1 grid-rows-3 cursor-pointer">
+    <span class="bg-black min-w-7 min-h-0.5 rounded"></span>
+    <span class="bg-black min-w-7 min-h-0.5 rounded"></span>
+    <span class="bg-black min-w-7 min-h-0.5 rounded"></span>
+  </label>
+  <nav class="absolute hidden mt-8 flex-col justify-center items-center gap-6 w-svw md:hidden py-6 top-1 md:-top-1.5 bg-blue-950">
+      <TypographyLink light href="/">Home</TypographyLink>
+      <TypographyLink light href="/blog">Blog</TypographyLink>
+      <TypographyLink light href="/about">About</TypographyLink>
+  </nav>
+</div>

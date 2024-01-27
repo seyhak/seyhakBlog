@@ -2,7 +2,7 @@
 import Social from "@components/Social.astro"
 import TypographyLink from "@components/TypographyLink.astro"
 
-import {SOCIAL_MEDIA_SERVICES} from '@types/social-media'
+import {SOCIAL_MEDIA_SERVICES} from 'src/types/social-media'
 
 
 const SOCIALS = [
@@ -22,12 +22,12 @@ const SOCIALS = [
 
 ---
 
-<footer class="px-6 py-4 mt-2 dark:bg-blue-800 bg-blue-950 text-white dark:text-black max-sm:block" >
+<footer class="px-6 py-3 mt-2 dark:bg-gray-950 bg-blue-950 text-blue-100 max-sm:block" >
   <div class="flex justify-around items-center max-w-prose mx-auto max-sm:flex-col max-sm:gap-2">
-    <TypographyLink href="about">
+    <TypographyLink href="about" light>
       About
     </TypographyLink>
-    <TypographyLink href="contact">
+    <TypographyLink href="contact" light>
       Contact
     </TypographyLink>
   </div>

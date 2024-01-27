@@ -1,6 +1,8 @@
 {
   "name": "astro",
   "type": "module",
+  "author": "Seyhak Ly",
+  "license": "You can use code, don't use posts/content",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",

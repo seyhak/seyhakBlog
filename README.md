@@ -1,6 +1,6 @@
 # seyhakBlog
-Astro Seyhak Blog
 
+Astro Seyhak Blog
 
 ```sh
 npm create astro@latest -- --template basics
