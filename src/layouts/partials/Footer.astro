@@ -8,13 +8,11 @@ import {SOCIAL_MEDIA_SERVICES} from 'src/types/social-media'
 const SOCIALS = [
   {
     name: "wetereynarzwpracy",
-    icon: "",
     link: "https://www.instagram.com/weterynarz_wpracy/",
     service: SOCIAL_MEDIA_SERVICES.INSTAGRAM
   },
   {
     name: "wetereynarzwpracy",
-    icon: "",
     link: "https://www.facebook.com/weterynarzwpracy",
     service: SOCIAL_MEDIA_SERVICES.FACEBOOK
   }
@@ -34,7 +32,7 @@ const SOCIALS = [
   <div class="flex justify-center items-center">
     <div class="flex justify-center items-center gap-4">
       {SOCIALS.map(social => (
-        <Social service={social.service} name={social.name} link={social.link} icon={social.icon}/>
+        <Social service={social.service} name={social.name} link={social.link}/>
       ))}
     </div>
   </div>
