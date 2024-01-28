@@ -1,40 +1,56 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
-import '../styles/global.css';
-const pageTitle = "About Me";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getFormattedDate } from "@utils/date";
+// const pageTitle = "About Me";
 
-const identity = {
-  firstName: "Sarah",
-  country: "Canada",
-  occupation: "Technical Writer",
-  hobbies: ["photography", "birdwatching", "baseball"],
+// const identity = {
+//   firstName: "Sarah",
+//   country: "Canada",
+//   occupation: "Technical Writer",
+//   hobbies: ["photography", "birdwatching", "baseball"],
+// };
+
+// const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const publishedDate = new Date("2024-01-10 17:20");
+type Props = {
+  frontmatter: any;
 };
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-// const skillColor = "navy";
+const publishedAtLocal = getFormattedDate(publishedDate);
 ---
-<BaseLayout>
-<article>
-  <h1>{pageTitle}</h1>
-  <h2>... and my new Astro site!</h2>
-  <h1>My Astro Site</h1>
-  <h1>About Me</h1>
-  <h2>... and my new Astro site!</h2>
 
-  <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
-
-  <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
-  <p>Here are a few facts about me:</p>
-  <ul>
-    <li>My name is {identity.firstName}.</li>
-    <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-    {identity.hobbies.length >= 2 &&
-      <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-    }
-  </ul>
-  <p>My skills are:</p>
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
-  </ul>
-</article>
+<BaseLayout
+  pageTitle="O mnie"
+  description="Dowiedz się więcej o weterynarzu tworzącym bloga."
+  ogType="profile"
+>
+  <Fragment slot="meta">
+    <meta name="profile:username" content="weterynarzwpracy" />
+    <meta name="profile:gender" content="female" />
+    <meta name="profile:first_name " content="Ania" />
+    <meta name="profile:last_name " content="Ganowska" />
+  </Fragment>
+    <meta itemprop="datePublished" content={publishedDate.toISOString()} />
+    <meta itemprop="publisher" content="Anna Ganowska" />
+    <meta itemprop="author" content="Anna Ganowska" />
+    <article itemscope itemtype="https://schema.org/Author" class="mt-8">
+      <header>
+        <p>{publishedAtLocal}</p>
+      </header>
+      <h2>
+        Nazywam się <span itemprop="name">Ania Ganowska</span> i jestem lekarzem weterynarii.
+      </h2>
+      <p itemprop="description">
+        Moimi pacjentami są psy i koty, a także króliki, gryzonie i gady.<br />
+        Rozwijam się przede wszystkim w nefrologii psów i kotów, a także w medycynie
+        zwierząt egzotycznych.
+      </p>
+      <p>
+        Na tej stronie chciałabym przekazać Wam wiedzę na temat zwierzaków i
+        pokazać jak możecie zadbać o nie jeszcze lepiej! 🙂.<br />
+        Zapraszam do wspólnej weterynaryjnej przygody z <span class="italic"
+          >weterynarz w pracy</span
+        >!
+      </p>
+    </article>
 </BaseLayout>
