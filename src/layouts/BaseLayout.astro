@@ -1,26 +1,52 @@
 ---
+import Footer from "./partials/Footer.astro";
+import Header from "./partials/Header.astro";
+// import Logo from "@assets/images/logo.png?path"
 
-import Footer from './partials/Footer.astro';
-import Header from './partials/Header.astro';
-
-import "@styles/global.sass"
-import '@styles/global.css';
-const {pageTitle} = Astro.props;
+import "@styles/global.sass";
+type Props = {
+  pageTitle?: string;
+  description?: string;
+  ogType?: string;
+};
+const {
+  pageTitle = "Blog weterynaryjny Ani Ganowskiej - o gadach, gryzoniach, psach i kotach",
+  description = "Na tej stronie chciałabym przekazać Wam wiedzę na temat zwierzaków. Moimi pacjentami są psy i koty, a także króliki, gryzonie i gady.",
+  ogType = "website"
+} = Astro.props;
+const url = Astro.url;
+const locale = "pl_PL";
+const siteName = "Blog Ani Ganowskiej";
 ---
-<html lang="en" class="bg-blue-50 dark:bg-blue-950 font-sans md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+
+<html
+  lang={locale}
+  class="font-sans md:text-base lg:text-lg xl:text-xl 2xl:text-2xl"
+>
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- <meta name="google-site-verification" content="..."> -->
     <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{pageTitle}</title>
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:url" content={url} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:image" content="assets/images/logo.png" />
+    <slot name="meta" />
     <script src="src/scripts/global-raw.js"></script>
   </head>
-  <body>
+  <body class="bg-blue-50 dark:bg-blue-900 dark:text-blue-50">
     <Header />
     <div class="min-h-[80vh] max-sm:block mx-auto max-w-prose max-sm:mx-5">
-      <main class="flex flex-col items-center justify-center gap-2" >
-        <slot/>
+      <main class="flex flex-col items-center justify-center gap-2">
+        <slot />
       </main>
     </div>
     <Footer />
