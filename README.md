@@ -21,6 +21,6 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 ## SEO
 
-* https://ogp.me/
-* https://www.youtube.com/watch?v=-B58GgsehKQ
-* https://developers.google.com/search/docs/appearance/structured-data/article#microdata
+- https://ogp.me/
+- https://www.youtube.com/watch?v=-B58GgsehKQ
+- https://developers.google.com/search/docs/appearance/structured-data/article#microdata

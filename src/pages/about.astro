@@ -1,6 +1,6 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
-import { getFormattedDate } from "@utils/date";
+import BaseLayout from "@layouts/BaseLayout.astro"
+import { getFormattedDate } from "@utils/date"
 // const pageTitle = "About Me";
 
 // const identity = {
@@ -12,11 +12,11 @@ import { getFormattedDate } from "@utils/date";
 
 // const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
-const publishedDate = new Date("2024-01-10 17:20");
+const publishedDate = new Date("2024-01-10 17:20")
 type Props = {
-  frontmatter: any;
-};
-const publishedAtLocal = getFormattedDate(publishedDate);
+  frontmatter: any
+}
+const publishedAtLocal = getFormattedDate(publishedDate)
 ---
 
 <BaseLayout
@@ -30,27 +30,27 @@ const publishedAtLocal = getFormattedDate(publishedDate);
     <meta name="profile:first_name " content="Ania" />
     <meta name="profile:last_name " content="Ganowska" />
   </Fragment>
-    <meta itemprop="datePublished" content={publishedDate.toISOString()} />
-    <meta itemprop="publisher" content="Anna Ganowska" />
-    <meta itemprop="author" content="Anna Ganowska" />
-    <article itemscope itemtype="https://schema.org/Author" class="mt-8">
-      <header>
-        <p>{publishedAtLocal}</p>
-      </header>
-      <h2>
-        Nazywam się <span itemprop="name">Ania Ganowska</span> i jestem lekarzem weterynarii.
-      </h2>
-      <p itemprop="description">
-        Moimi pacjentami są psy i koty, a także króliki, gryzonie i gady.<br />
-        Rozwijam się przede wszystkim w nefrologii psów i kotów, a także w medycynie
-        zwierząt egzotycznych.
-      </p>
-      <p>
-        Na tej stronie chciałabym przekazać Wam wiedzę na temat zwierzaków i
-        pokazać jak możecie zadbać o nie jeszcze lepiej! 🙂.<br />
-        Zapraszam do wspólnej weterynaryjnej przygody z <span class="italic"
-          >weterynarz w pracy</span
-        >!
-      </p>
-    </article>
+  <meta itemprop="datePublished" content={publishedDate.toISOString()} />
+  <meta itemprop="publisher" content="Anna Ganowska" />
+  <meta itemprop="author" content="Anna Ganowska" />
+  <article itemscope itemtype="https://schema.org/Author" class="mt-8">
+    <header>
+      <p>{publishedAtLocal}</p>
+    </header>
+    <h2>
+      Nazywam się <span itemprop="name">Ania Ganowska</span> i jestem lekarzem weterynarii.
+    </h2>
+    <p itemprop="description">
+      Moimi pacjentami są psy i koty, a także króliki, gryzonie i gady.<br />
+      Rozwijam się przede wszystkim w nefrologii psów i kotów, a także w medycynie
+      zwierząt egzotycznych.
+    </p>
+    <p>
+      Na tej stronie chciałabym przekazać Wam wiedzę na temat zwierzaków i
+      pokazać jak możecie zadbać o nie jeszcze lepiej! 🙂.<br />
+      Zapraszam do wspólnej weterynaryjnej przygody z <span class="italic"
+        >weterynarz w pracy</span
+      >!
+    </p>
+  </article>
 </BaseLayout>

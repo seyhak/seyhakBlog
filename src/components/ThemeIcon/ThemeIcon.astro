@@ -1,8 +1,8 @@
 ---
-import "./ThemeIcon.sass";
+import "./ThemeIcon.sass"
 ---
 
-<button id="themeToggle">
+<button id="themeToggle" aria-label="przełącz motyw">
   <svg width="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path
       class="sun"
@@ -20,36 +20,38 @@ import "./ThemeIcon.sass";
 <script>
   enum THEMES {
     DARK = "dark",
-    LIGHT = "light",
+    LIGHT = "light"
   }
   const theme = (() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme") as typeof THEMES[keyof typeof THEMES];
+      return localStorage.getItem(
+        "theme"
+      ) as (typeof THEMES)[keyof typeof THEMES]
     }
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return THEMES.DARK;
+      return THEMES.DARK
     }
-    return THEMES.LIGHT;
-  })();
+    return THEMES.LIGHT
+  })()
 
   if (theme === THEMES.LIGHT) {
-    document.documentElement.classList.remove(THEMES.DARK);
+    document.documentElement.classList.remove(THEMES.DARK)
   } else {
-    document.documentElement.classList.add(THEMES.DARK);
+    document.documentElement.classList.add(THEMES.DARK)
   }
 
-  window.localStorage.setItem("theme", theme);
+  window.localStorage.setItem("theme", theme)
 
   const handleToggleClick = () => {
-    const element = document.documentElement;
-    element.classList.toggle(THEMES.DARK);
+    const element = document.documentElement
+    element.classList.toggle(THEMES.DARK)
 
-    const isDark = element.classList.contains(THEMES.DARK);
-    console.log(THEMES.DARK);
-    localStorage.setItem("theme", isDark ? THEMES.DARK : THEMES.LIGHT);
-  };
+    const isDark = element.classList.contains(THEMES.DARK)
+    console.log(THEMES.DARK)
+    localStorage.setItem("theme", isDark ? THEMES.DARK : THEMES.LIGHT)
+  }
 
   document
     .getElementById("themeToggle")!
-    .addEventListener("click", handleToggleClick);
+    .addEventListener("click", handleToggleClick)
 </script>

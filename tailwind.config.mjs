@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultTheme = require("tailwindcss/defaultTheme")
 
 export default {
   darkMode: "class",
@@ -18,7 +18,7 @@ export default {
   },
   theme: {
     extend: {
-      ...defaultTheme,
+      ...defaultTheme
       // fontSize: {
       // 	sm: '0.8rem',
       // 	base: '1rem',
@@ -32,7 +32,7 @@ export default {
       //   // 'sans': ['"Proxima Nova"', ...defaultTheme.fontFamily.sans],
       //   // 'sans': ['"cursive"', ...defaultTheme.fontFamily.sans],
       // },
-    },
+    }
   },
-  plugins: [],
-};
+  plugins: []
+}

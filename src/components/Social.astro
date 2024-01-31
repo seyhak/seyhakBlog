@@ -1,20 +1,20 @@
 ---
-import {SOCIAL_MEDIA_SERVICES} from 'src/types/social-media'
+import { SOCIAL_MEDIA_SERVICES } from "src/types/social-media"
 
 import InstagramIcon from "@assets/svgs/instagram.svg?raw"
 import FacebookIcon from "@assets/svgs/facebook.svg?raw"
-import ButtonLink from '@components/ButtonLink/ButtonLink.astro';
+import ButtonLink from "@components/ButtonLink/ButtonLink.astro"
 
 export type Props = {
-  name: string;
-  link: string;
-  service: typeof SOCIAL_MEDIA_SERVICES[keyof typeof SOCIAL_MEDIA_SERVICES]
-};
+  name: string
+  link: string
+  service: (typeof SOCIAL_MEDIA_SERVICES)[keyof typeof SOCIAL_MEDIA_SERVICES]
+}
 const ICONS = {
   [SOCIAL_MEDIA_SERVICES.INSTAGRAM]: InstagramIcon,
-  [SOCIAL_MEDIA_SERVICES.FACEBOOK]: FacebookIcon,
+  [SOCIAL_MEDIA_SERVICES.FACEBOOK]: FacebookIcon
 }
-const { name, link, service } = Astro.props;
+const { name, link, service } = Astro.props
 const serviceIcon = ICONS[service]
 ---
 
@@ -27,7 +27,7 @@ const serviceIcon = ICONS[service]
     class="flex justify-center items-center gap-1"
   >
     <ButtonLink label={name}>
-      <Fragment set:html={serviceIcon}/>
+      <Fragment set:html={serviceIcon} />
     </ButtonLink>
   </a>
 </div>

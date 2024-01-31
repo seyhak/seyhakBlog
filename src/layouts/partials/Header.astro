@@ -1,16 +1,18 @@
 ---
 import Logo from "@assets/images/logo.png"
-import Hamburger from "@components/Hamburger/Hamburger.astro";
-import Navigation from "./Navigation.astro";
-import ThemeIcon from "@components/ThemeIcon/ThemeIcon.astro";
-import {Image} from "astro:assets"
-
+import Hamburger from "@components/Hamburger/Hamburger.astro"
+import Navigation from "./Navigation.astro"
+import ThemeIcon from "@components/ThemeIcon/ThemeIcon.astro"
+import { Image } from "astro:assets"
 ---
-<header class="mb-2 px-6 py-3 flex justify-between items-center space-around" >
+
+<header class="mb-2 px-6 py-3 flex justify-between items-center space-around">
   <Hamburger />
   <div class="max-h-12 flex aspect-square">
-    <Image src={Logo} alt="logo"/>
+    <Image src={Logo} alt="logo" loading="eager" />
   </div>
-  <Navigation className="md:flex items-center justify-center gap-8 max-md:hidden"/>
+  <Navigation
+    className="md:flex items-center justify-center gap-8 max-md:hidden"
+  />
   <ThemeIcon />
 </header>
