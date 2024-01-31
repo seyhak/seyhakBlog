@@ -39,14 +39,14 @@ const siteName = "Blog Ani Ganowskiej"
     <meta property="og:site_name" content={siteName} />
     <meta property="og:image" content="assets/images/logo.png" />
     <slot name="meta" />
-    <script src="src/scripts/global-raw.js"></script>
+    <script is:inline src="src/scripts/global-raw.js"></script>
   </head>
   <body
     class="dark:text-blue-50 bg-gradient-to-br from-blue-100 via-purple-500 to-pink-500 dark:from-blue-950 dark:via-purple-900 dark:to-pink-800"
   >
     <Header />
     <div class="flex min-h-[80vh] max-sm:block mx-auto max-w-prose max-sm:mx-5">
-      <main class:list={["flex flex-col gap-2", mainClass]}>
+      <main class:list={["flex flex-col gap-2 flex-1", mainClass]}>
         <slot />
       </main>
     </div>

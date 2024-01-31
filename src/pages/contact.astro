@@ -1,4 +1,5 @@
 ---
+import Button from "@components/Button.astro"
 import TypographyLink from "@components/TypographyLink/TypographyLink.astro"
 import BaseLayout from "src/layouts/BaseLayout.astro"
 ---
@@ -7,7 +8,10 @@ import BaseLayout from "src/layouts/BaseLayout.astro"
   pageTitle="Kontakt"
   description="Kontakt do weterynarza od gadów, gryzoni, psów i kotów"
 >
-  <div class="w-full flex flex-grid md:flex-row gap-2 justify-between">
+  <div class:list={[
+    "w-full flex flex-grid gap-2 justify-between md:flex-row",
+    "max-md:flex-col "
+  ]}>
     <div class="flex flex-1">
       <address>
         <div class="mb-2 not-italic">
@@ -32,6 +36,56 @@ import BaseLayout from "src/layouts/BaseLayout.astro"
         </address>
       </address>
     </div>
-    <div class="flex flex-1">2</div>
+    <div class="flex flex-1">
+      <form class="min-w-full" method="post">
+        <div class="flex flex-col mb-1">
+          <label for="name" htmlFor="name">Your Name</label>
+          <input
+            class="px-1 text-black"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Rex"
+            autocomplete="username"
+            required
+          />
+        </div>
+        <div class="flex flex-col mb-1">
+          <label for="email" htmlFor="email">Your Email</label>
+          <input
+            class="px-1 text-black"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@email.com"
+            autocomplete="email"
+            required
+          />
+        </div>
+        <div class="flex flex-col mb-1">
+          <label for="topic" htmlFor="topic">Temat</label>
+          <input
+            class="px-1 text-black"
+            type="text"
+            id="topic"
+            name="topic"
+            placeholder="Współpraca"
+            autocomplete="on"
+            required
+          />
+        </div>
+        <div class="flex flex-col mb-2">
+          <label for="message" htmlFor="message">Wiadomość</label>
+          <textarea
+            class="px-1 text-black"
+            id="message"
+            name="message"
+            rows="4"
+            autocomplete="on"
+            required/>
+        </div>
+        <Button type="submit">Wyślij</Button>
+      </form>
+    </div>
   </div>
 </BaseLayout>
