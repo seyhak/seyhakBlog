@@ -1,0 +1,37 @@
+---
+import TypographyLink from "@components/TypographyLink/TypographyLink.astro"
+import BaseLayout from "src/layouts/BaseLayout.astro"
+---
+
+<BaseLayout
+  pageTitle="Kontakt"
+  description="Kontakt do weterynarza od gadów, gryzoni, psów i kotów"
+>
+  <div class="w-full flex flex-grid md:flex-row gap-2 justify-between">
+    <div class="flex flex-1">
+      <address>
+        <div class="mb-2 not-italic">
+          <h3>📧 Email</h3>
+          <TypographyLink href="mailto:weteryarznadyzurze@gmail.com">
+            weteryarznadyzurze@gmail.com
+          </TypographyLink>
+        </div>
+        <div class="mb-2 not-italic">
+          <h3>☎ Telefon</h3>
+          <TypographyLink href="tel:+48 515 000 502">
+            +48 515 000 502
+          </TypographyLink>
+        </div>
+        <address class="mb-2 not-italic">
+          <h3>Lub w gabinecie, w którym pracuję 👩‍⚕️</h3>
+          <p>
+            Eden<br />
+            Bielska 19<br />
+            Opole, Polska
+          </p>
+        </address>
+      </address>
+    </div>
+    <div class="flex flex-1">2</div>
+  </div>
+</BaseLayout>
