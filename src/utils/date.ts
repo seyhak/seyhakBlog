@@ -4,8 +4,8 @@ const OPTIONS: Intl.DateTimeFormatOptions = {
   month: "long",
   day: "numeric",
   hour: "numeric",
-  minute: "numeric",
-} ;
+  minute: "numeric"
+}
 
 export const getFormattedDate = (date: Date) => {
   return date.toLocaleString("pl", OPTIONS)

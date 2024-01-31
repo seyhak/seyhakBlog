@@ -1,22 +1,25 @@
 ---
-import TypographyLink from "@components/TypographyLink/TypographyLink.astro";
+import TypographyLink from "@components/TypographyLink/TypographyLink.astro"
 
 type Props = {
-  className?: string,
+  className?: string
   light?: boolean
 }
-const {className, light} = Astro.props
+const { className, light } = Astro.props
 const LINKS = [
-  { href: "/", light: !!light, label: "Home"},
-  { href: "/blog/", light: !!light, label: "Blog"},
-  { href: "/tags/", light: !!light, label: "Tagi"},
-  { href: "/about/", light: !!light, label: "O mnie"},
+  { href: "/", light: !!light, label: "Home" },
+  { href: "/blog/", light: !!light, label: "Blog" },
+  { href: "/tags/", light: !!light, label: "Tagi" },
+  { href: "/about/", light: !!light, label: "O mnie" }
 ]
 ---
+
 <nav class:list={["font-semibold", className]}>
   {
-    LINKS.map(link => (
-      <TypographyLink href={link.href} light={link.light}>{link.label}</TypographyLink>
+    LINKS.map((link) => (
+      <TypographyLink href={link.href} light={link.light}>
+        {link.label}
+      </TypographyLink>
     ))
   }
 </nav>

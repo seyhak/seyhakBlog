@@ -1,9 +1,9 @@
 ---
-import { Image } from "astro:assets";
-import BaseLayout from "src/layouts/BaseLayout.astro";
-import AnnaGanowskaHiImg from "@assets/images/AnnaGanowskaHi.webp";
-import IndexSectionWithImg from "@components/IndexSectionWithImg.astro";
-import Img1 from "@assets/images/img1.jpeg";
+import { Image } from "astro:assets"
+import BaseLayout from "src/layouts/BaseLayout.astro"
+import AnnaGanowskaHiImg from "@assets/images/AnnaGanowskaHi.webp"
+import IndexSectionWithImg from "@components/IndexSectionWithImg.astro"
+import Img1 from "@assets/images/img1.jpeg"
 ---
 
 <BaseLayout>
@@ -14,6 +14,7 @@ import Img1 from "@assets/images/img1.jpeg";
     <Image
       src={AnnaGanowskaHiImg}
       alt="To ja Anna Ganowska, weterynarz w pracy!"
+      loading="eager"
     />
   </section>
   <section class="flex flex-col justify-center gap-4">
@@ -21,6 +22,7 @@ import Img1 from "@assets/images/img1.jpeg";
     <IndexSectionWithImg
       className="revealed fade-left flex-row-reverse"
       title="Reptiles"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tincidunt urna. Cras erat purus, molestie at augue at, venenatis vestibulum elit. Suspendisse potenti. Morbi vel metus placerat, placerat felis nec, pulvinar purus. Sed eget viverra elit, a vulputate ligula. Sed ac massa sed ligula malesuada pretium ut nec augue. Vivamus interdum eros sit amet scelerisque sagittis. Nullam in ligula nulla. Aenean a aliquam enim. Curabitur id pulvinar dui. Morbi tempus semper ultricies. Nam eget fermentum leo, et laoreet quam. Suspendisse a urna vitae arcu consequat viverra. Cras eget ornare risus, non vehicula elit. Maecenas pharetra tincidunt velit ac pretium. Donec mattis augue a blandit tristique. Sed consequat ultricies magna nec euismod. Etiam vitae ante sit amet purus vulputate pellentesque. Cras facilisis ipsum vitae lorem blandit congue in a diam. Proin lobortis placerat sem id laoreet. Nunc in lacus ac felis tincidunt euismod. Nulla ut arcu efficitur, ullamcorper tellus vitae, convallis metus. Duis vel mollis nibh. In imperdiet augue non tortor tempor tincidunt a ut odio. Suspendisse ornare hendrerit lectus, non vestibulum nibh condimentum ac. Suspendisse interdum eleifend ex, ac rutrum risus pretium placerat. Pellentesque varius tincidunt nisi, eu vehicula ipsum gravida a. Proin et nisi vel arcu pellentesque gravida eu sit amet lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean tempor orci a lectus interdum ullamcorper."
       imgSrc={Img1}
       imgAlt="twoja stara"
     />
