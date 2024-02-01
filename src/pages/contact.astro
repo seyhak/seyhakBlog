@@ -2,6 +2,7 @@
 import Button from "@components/Button.astro"
 import TypographyLink from "@components/TypographyLink/TypographyLink.astro"
 import BaseLayout from "src/layouts/BaseLayout.astro"
+import { ContactForm } from "@components/react/ContactForm"
 ---
 
 <BaseLayout
@@ -39,55 +40,7 @@ import BaseLayout from "src/layouts/BaseLayout.astro"
       </address>
     </div>
     <div class="flex flex-1">
-      <form class="min-w-full" method="post">
-        <div class="flex flex-col mb-1">
-          <label for="name">Your Name</label>
-          <input
-            class="px-1 text-black"
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Rex"
-            autocomplete="username"
-            required
-          />
-        </div>
-        <div class="flex flex-col mb-1">
-          <label for="email">Your Email</label>
-          <input
-            class="px-1 text-black"
-            type="email"
-            id="email"
-            name="email"
-            placeholder="example@email.com"
-            autocomplete="email"
-            required
-          />
-        </div>
-        <div class="flex flex-col mb-1">
-          <label for="topic">Temat</label>
-          <input
-            class="px-1 text-black"
-            type="text"
-            id="topic"
-            name="topic"
-            placeholder="Współpraca"
-            autocomplete="on"
-            required
-          />
-        </div>
-        <div class="flex flex-col mb-2">
-          <label for="message">Wiadomość</label>
-          <textarea
-            class="px-1 text-black"
-            id="message"
-            name="message"
-            rows="4"
-            autocomplete="on"
-            required></textarea>
-        </div>
-        <Button type="submit">Wyślij</Button>
-      </form>
+      <ContactForm client:load />
     </div>
   </div>
   <div class="w-full rounded flex flex-1 mt-4 min-h-[30rem]">
@@ -97,8 +50,6 @@ import BaseLayout from "src/layouts/BaseLayout.astro"
       height="100%"
       style="border:0;"
       loading="lazy"
-      class="max-md:min-h-[35rem]"
-    >
+      class="max-md:min-h-[35rem]"></iframe>
   </div>
-  </iframe>
 </BaseLayout>
