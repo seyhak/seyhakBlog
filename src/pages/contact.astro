@@ -8,10 +8,16 @@ import BaseLayout from "src/layouts/BaseLayout.astro"
   pageTitle="Kontakt"
   description="Kontakt do weterynarza od gadów, gryzoni, psów i kotów"
 >
-  <div class:list={[
-    "w-full flex flex-grid gap-2 justify-between md:flex-row",
-    "max-md:flex-col "
-  ]}>
+  <script
+    async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQmgFq4rIPlpeGw40toAQn3z_GHazvrxk&MAP_ID&callback=console.debug&libraries=maps,marker&v=beta"
+  ></script>
+  <div
+    class:list={[
+      "w-full flex flex-grid gap-2 justify-between md:flex-row",
+      "max-md:flex-col "
+    ]}
+  >
     <div class="flex flex-1">
       <address>
         <div class="mb-2 not-italic">
@@ -82,10 +88,20 @@ import BaseLayout from "src/layouts/BaseLayout.astro"
             name="message"
             rows="4"
             autocomplete="on"
-            required/>
+            required></textarea>
         </div>
         <Button type="submit">Wyślij</Button>
       </form>
     </div>
   </div>
+  <div class="w-full rounded flex flex-1 mt-4 min-h-[30rem]">
+    <iframe
+      src="https://storage.googleapis.com/maps-solutions-ie6dq62kee/locator-plus/bs3e/locator-plus.html"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      loading="lazy"
+    >
+  </div>
+  </iframe>
 </BaseLayout>
