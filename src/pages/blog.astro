@@ -4,10 +4,10 @@ import BlogPostShort from "@components/BlogPostShort.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
 
 const allPosts = await getCollection("posts")
-const pageTitle = "My Astro Learning Blog"
+const pageTitle = "Blog weterynaryjny. Informacje - gady, gryzionie, psy i koty"
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} mainClass="items-center justify-start">
   <h1>Hej, tu możesz przejrzeć wszystkie moje wpisy 👩‍⚕️</h1>
   <ul>
     {allPosts.map((post) => <BlogPostShort post={post} />)}

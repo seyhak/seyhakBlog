@@ -1,0 +1,30 @@
+---
+import "./IndexSectionWithImg.sass"
+import { Image } from "astro:assets"
+
+type Props = {
+  title: string
+  imgSrc: any
+  imgAlt: string
+  className?: string
+  description?: string
+}
+const { title, imgAlt, imgSrc, className, description } = Astro.props
+---
+
+<article
+  class:list={[
+    "IndexSectionWithImg flex justify-center items-center my-2 max-md:flex-col",
+    className
+  ]}
+  itemscope
+  itemprop="https://schema.org/Article"
+>
+  <meta name="article:author" content="Ania Ganowska" />
+  <meta name="article:section" content="Weterynaria" />
+  <div class="flex flex-col flex-1 max-md:mb-2">
+    <h2>{title}</h2>
+    <p>{description}</p>
+  </div>
+  <Image src={imgSrc} alt={imgAlt} class="flex-1 w-auto md:max-w-[50%]" />
+</article>

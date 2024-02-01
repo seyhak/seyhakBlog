@@ -8,11 +8,13 @@ type Props = {
   pageTitle?: string
   description?: string
   ogType?: string
+  mainClass?: string
 }
 const {
-  pageTitle = "Blog weterynaryjny Ani Ganowskiej - o gadach, gryzoniach, psach i kotach",
-  description = "Na tej stronie chciałabym przekazać Wam wiedzę na temat zwierzaków. Moimi pacjentami są psy i koty, a także króliki, gryzonie i gady.",
-  ogType = "website"
+  pageTitle = "Weterynarz od gadów, królików, gryzoni, psów i kotów - Ania Ganowska",
+  description = "Blog weterynaryjny Ani Ganowskiej - o gadach, gryzoniach, psach i kotach. Na tej stronie chciałabym przekazać Wam wiedzę na temat zwierzaków. Moimi pacjentami są psy i koty, a także króliki, gryzonie i gady.",
+  ogType = "website",
+  mainClass = "items-center justify-center"
 } = Astro.props
 const url = "vetblog.netlify.app"
 const locale = "pl"
@@ -37,12 +39,14 @@ const siteName = "Blog Ani Ganowskiej"
     <meta property="og:site_name" content={siteName} />
     <meta property="og:image" content="assets/images/logo.png" />
     <slot name="meta" />
-    <script src="src/scripts/global-raw.js"></script>
+    <script is:inline src="src/scripts/global-raw.js"></script>
   </head>
-  <body class="bg-blue-50 dark:bg-blue-900 dark:text-blue-50">
+  <body
+    class="dark:text-blue-50 bg-gradient-to-br from-blue-100 via-purple-500 to-pink-500 dark:from-blue-950 dark:via-purple-900 dark:to-pink-800"
+  >
     <Header />
-    <div class="min-h-[80vh] max-sm:block mx-auto max-w-prose max-sm:mx-5">
-      <main class="flex flex-col items-center justify-center gap-2">
+    <div class="flex min-h-[80vh] max-sm:block mx-auto max-md:max-w-prose md:max-w-[80ch] max-sm:mx-5">
+      <main class:list={["flex flex-col gap-2 flex-1", mainClass]}>
         <slot />
       </main>
     </div>

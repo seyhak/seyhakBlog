@@ -8,9 +8,9 @@ import { Image } from "astro:assets"
 
 <header class="mb-2 px-6 py-3 flex justify-between items-center space-around">
   <Hamburger />
-  <div class="max-h-12 flex aspect-square">
+  <a href="/" aria-label="go home" class="max-h-12 flex aspect-square">
     <Image src={Logo} alt="logo" loading="eager" />
-  </div>
+  </a>
   <Navigation
     className="md:flex items-center justify-center gap-8 max-md:hidden"
   />

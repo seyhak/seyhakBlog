@@ -26,7 +26,10 @@ const serviceIcon = ICONS[service]
     rel="noopener noreferrer nofollow"
     class="flex justify-center items-center gap-1"
   >
-    <ButtonLink label={name}>
+    <ButtonLink
+      label={name}
+      className="fill-black hover:text-indigo-900 hover:fill-indigo-900 dark:fill-blue-50 dark:hover:fill-white"
+    >
       <Fragment set:html={serviceIcon} />
     </ButtonLink>
   </a>
