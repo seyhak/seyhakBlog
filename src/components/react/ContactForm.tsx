@@ -1,21 +1,21 @@
 import { type FormEvent, useCallback, useState } from "react"
 import { Button } from "./Button"
 
-const CONTACT_FORM_LAST_SUBMITTED_DATE = "contact-form-last-submitted-date"
+// const CONTACT_FORM_LAST_SUBMITTED_DATE = "contact-form-last-submitted-date"
 
-const checkIfWasSubmitted = () => {
-  // on server there is no localStorage
-  if (typeof localStorage === "undefined") {
-    return false
-  }
-  const now = Date.now()
-  const periodDisabled = 24 * 60 * 60 * 1000
-  const then = localStorage.getItem(CONTACT_FORM_LAST_SUBMITTED_DATE)
-    ? parseInt(localStorage.getItem(CONTACT_FORM_LAST_SUBMITTED_DATE) as string)
-    : 0
-  const periodDisabledElapsed = now - then < periodDisabled
-  return periodDisabledElapsed
-}
+// const checkIfWasSubmitted = () => {
+//   // on server there is no localStorage
+//   if (typeof localStorage === "undefined") {
+//     return false
+//   }
+//   const now = Date.now()
+//   const periodDisabled = 24 * 60 * 60 * 1000
+//   const then = localStorage.getItem(CONTACT_FORM_LAST_SUBMITTED_DATE)
+//     ? parseInt(localStorage.getItem(CONTACT_FORM_LAST_SUBMITTED_DATE) as string)
+//     : 0
+//   const periodDisabledElapsed = now - then < periodDisabled
+//   return periodDisabledElapsed
+// }
 
 const FUNCTION_URL =
   "https://europe-central2-vetblog.cloudfunctions.net/send_mail"
@@ -56,7 +56,7 @@ type ContactFormProps = {
 }
 
 export const ContactForm = ({ authToken }: ContactFormProps) => {
-  const [isSubmitted, setIsSubmitted] = useState(checkIfWasSubmitted)
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState(false)
 
   const onSubmit = useCallback(
@@ -71,10 +71,10 @@ export const ContactForm = ({ authToken }: ContactFormProps) => {
 
       const result = await sendEmail(name, email, topic, message, authToken)
       if (result) {
-        localStorage.setItem(
-          CONTACT_FORM_LAST_SUBMITTED_DATE,
-          Date.now().toString()
-        )
+        // localStorage.setItem(
+        //   CONTACT_FORM_LAST_SUBMITTED_DATE,
+        //   Date.now().toString()
+        // )
         setError(false)
         setIsSubmitted(true)
       } else {

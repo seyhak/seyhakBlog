@@ -17,16 +17,14 @@ import "./ThemeIcon.sass"
   </svg>
 </button>
 
-<script>
-  enum THEMES {
-    DARK = "dark",
-    LIGHT = "light"
+<script is:inline>
+  const THEMES = {
+    DARK: "dark",
+    LIGHT: "light"
   }
   const theme = (() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem(
-        "theme"
-      ) as (typeof THEMES)[keyof typeof THEMES]
+      return localStorage.getItem("theme")
     }
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       return THEMES.DARK
@@ -51,6 +49,6 @@ import "./ThemeIcon.sass"
   }
 
   document
-    .getElementById("themeToggle")!
+    .getElementById("themeToggle")
     .addEventListener("click", handleToggleClick)
 </script>
