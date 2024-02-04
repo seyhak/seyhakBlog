@@ -1,53 +1,62 @@
 ---
 import { Image } from "astro:assets"
-import BaseLayout from "src/layouts/BaseLayout.astro"
-import AnnaGanowskaHiImg from "@assets/images/AnnaGanowskaHi.webp"
+import BaseLayout from "@layouts/BaseLayout.astro"
+import Carousel from "@components/Carousel/Carousel.astro"
 import IndexSectionWithImg from "@components/IndexSectionWithImg/IndexSectionWithImg.astro"
-import Img1 from "@assets/images/img1.jpeg"
+import AniaImg from "@assets/images/ania.jpeg"
+import RatImg from "@assets/images/rat.jpeg"
+import CatImg from "@assets/images/cat.jpeg"
+import ReptileImg from "@assets/images/reptile.jpeg"
+import EdenImg from "@assets/images/co/logo_eden.png"
+import AviImg from "@assets/images/co/logo_avi.png"
+
+const CO_IMAGES = [
+  {src: EdenImg, href: "https://eden.opole.pl", alt: "klinika weterynaryjna Eden"},
+  {src: AviImg, href: "https://www.facebook.com/OpolskieCentrumAvi/", alt: "Opolskie Centrum Leczenia i Rehabilitacji Dzikich Zwierząt \"Avi\""},
+]
 ---
 
 <BaseLayout>
-  <section class="min-h-10">
-    <!-- <h2>Hej tu Anna Ganowska - Weterynarz w pracy!</h2> -->
-  </section>
-  <section class="flex justify-center">
+  <section class="flex justify-center flex-col">
+    <h2 class="text-center">Hej tu Ania, Weterynarz na dyżurze 👋</h2>
     <Image
-      src={AnnaGanowskaHiImg}
+      src={AniaImg}
       alt="To ja Anna Ganowska, weterynarz w pracy!"
       loading="eager"
+      class="rounded md:mx-12 w-auto lg:mx-14 xl:mx-24"
     />
   </section>
   <section class="flex flex-col justify-center gap-4">
-    <h1 class="revealed">Jestem specjalistką od</h1>
+    <h2 class="revealed mb-0">Jestem specjalistką od</h2>
     <IndexSectionWithImg
       className="revealed fade-left flex-row-reverse"
       title="Gadów"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tincidunt urna. Cras erat purus, molestie at augue at, venenatis vestibulum elit. Suspendisse potenti. Morbi vel metus placerat, placerat felis nec, pulvinar purus. Sed eget viverra elit, a vulputate ligula. Sed ac massa sed ligula malesuada pretium ut nec augue. Vivamus interdum eros sit amet scelerisque sagittis. Nullam in ligula nulla. Aenean a aliquam enim."
-      imgSrc={Img1}
+      imgSrc={ReptileImg}
       imgAlt="twoja stara"
     />
     <IndexSectionWithImg
       className="revealed fade-right"
       title="Gryzoni"
-      imgSrc={Img1}
+      imgSrc={RatImg}
       imgAlt="twoja stara"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tincidunt urna. Cras erat purus, molestie at augue at, venenatis vestibulum elit. Suspendisse potenti. Morbi vel metus placerat, placerat felis nec, pulvinar purus. Sed eget viverra elit, a vulputate ligula. Sed ac massa sed ligula malesuada pretium ut nec augue. Vivamus interdum eros sit amet scelerisque sagittis. Nullam in ligula nulla. Aenean a aliquam enim."
     />
     <IndexSectionWithImg
       className="revealed fade-left flex-row-reverse"
       title="Kotów"
-      imgSrc={Img1}
+      imgSrc={CatImg}
       imgAlt="twoja stara"
     />
     <IndexSectionWithImg
       className="revealed fade-right"
       title="Psów"
-      imgSrc={Img1}
+      imgSrc={ReptileImg}
       imgAlt="twoja stara"
     />
   </section>
   <section class="revealed fade-bottom my-6">
-    <h2>Współpracuję z :</h2>
-    GOogle maps shit?
+    <h2 class="text-center">Współpracuję z :</h2>
+    <Carousel images={CO_IMAGES} />
   </section>
 </BaseLayout>

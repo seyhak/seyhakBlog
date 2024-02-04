@@ -18,7 +18,6 @@ const { name, link, service } = Astro.props
 const serviceIcon = ICONS[service]
 ---
 
-<div class="flex justify-start items-center my-3">
   <a
     aria-label={name}
     href={link}
@@ -28,9 +27,8 @@ const serviceIcon = ICONS[service]
   >
     <ButtonLink
       label={name}
-      className="fill-black hover:text-indigo-900 hover:fill-indigo-900 dark:fill-blue-50 dark:hover:fill-white"
+      className="fill-black max-h-4 max-w-4 hover:text-indigo-900 hover:fill-indigo-900 dark:fill-blue-50 dark:hover:fill-white"
     >
       <Fragment set:html={serviceIcon} />
     </ButtonLink>
   </a>
-</div>
