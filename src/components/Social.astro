@@ -18,17 +18,17 @@ const { name, link, service } = Astro.props
 const serviceIcon = ICONS[service]
 ---
 
-  <a
-    aria-label={name}
-    href={link}
-    target="_blank"
-    rel="noopener noreferrer nofollow"
-    class="flex justify-center items-center gap-1"
+<a
+  aria-label={name}
+  href={link}
+  target="_blank"
+  rel="noopener noreferrer nofollow"
+  class="flex justify-center items-center gap-1"
+>
+  <ButtonLink
+    label={name}
+    className="fill-black max-h-4 max-w-4 hover:text-indigo-900 hover:fill-indigo-900 dark:fill-blue-50 dark:hover:fill-white"
   >
-    <ButtonLink
-      label={name}
-      className="fill-black max-h-4 max-w-4 hover:text-indigo-900 hover:fill-indigo-900 dark:fill-blue-50 dark:hover:fill-white"
-    >
-      <Fragment set:html={serviceIcon} />
-    </ButtonLink>
-  </a>
+    <Fragment set:html={serviceIcon} />
+  </ButtonLink>
+</a>

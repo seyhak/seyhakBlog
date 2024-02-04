@@ -17,7 +17,7 @@ function reveal() {
 
     if (shouldBeActive) {
       item.classList.add(ANIMATED_ACTIVE_CLASSNAME)
-    } else if(SHOULD_DISAPPEAR) {
+    } else if (SHOULD_DISAPPEAR) {
       item.classList.remove(ANIMATED_ACTIVE_CLASSNAME)
     }
   })

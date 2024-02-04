@@ -1,8 +1,9 @@
 ---
-import Button from "@components/Button.astro"
 import TypographyLink from "@components/TypographyLink/TypographyLink.astro"
 import BaseLayout from "src/layouts/BaseLayout.astro"
 import { ContactForm } from "@components/react/ContactForm"
+
+const authToken = import.meta.env.PUBLIC_EMAIL_SEND_AUTH_TOKEN
 ---
 
 <BaseLayout
@@ -40,16 +41,16 @@ import { ContactForm } from "@components/react/ContactForm"
       </address>
     </div>
     <div class="flex flex-1">
-      <ContactForm client:load />
+      <ContactForm client:load authToken={authToken} />
     </div>
   </div>
-  <div class="w-full rounded flex flex-1 mt-4 min-h-[30rem]">
-    <iframe
+  <!-- <div class="w-full rounded flex flex-1 mt-4 min-h-[30rem]"> -->
+  <!-- <iframe
       src="https://storage.googleapis.com/maps-solutions-ie6dq62kee/locator-plus/bs3e/locator-plus.html"
       width="100%"
       height="100%"
       style="border:0;"
       loading="lazy"
-      class="max-md:min-h-[35rem]"></iframe>
-  </div>
+      class="max-md:min-h-[35rem]"></iframe> -->
+  <!-- </div> -->
 </BaseLayout>
