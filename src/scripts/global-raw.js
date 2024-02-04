@@ -2,6 +2,7 @@ function reveal() {
   const ELEMENT_VISIBLE_THRESHOLD = 200
   const ANIMATED_SELECTOR = ".revealed"
   const ANIMATED_ACTIVE_CLASSNAME = "active"
+  const SHOULD_DISAPPEAR = false
   let reveals = document.querySelectorAll(ANIMATED_SELECTOR)
 
   reveals.forEach((item) => {
@@ -16,7 +17,7 @@ function reveal() {
 
     if (shouldBeActive) {
       item.classList.add(ANIMATED_ACTIVE_CLASSNAME)
-    } else {
+    } else if(SHOULD_DISAPPEAR) {
       item.classList.remove(ANIMATED_ACTIVE_CLASSNAME)
     }
   })
